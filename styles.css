@@ -1,0 +1,412 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #FFF9F4; /* Soft background */
+  color: #4B2E1F; /* Rich brown text */
+  line-height: 1.6;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Header */
+.site-header {
+  background-color: #FFF9F4;
+  border-bottom: 1px solid #EEDDCB;
+  padding: 1rem 0;
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #4B2E1F;
+  font-weight: 500;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #D89527;
+  transition: width 0.3s;
+}
+
+.nav-menu a:hover::after {
+  width: 100%;
+}
+
+/* How It Works Section */
+.how-it-works {
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.how-it-works h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #4B2E1F;
+  margin-bottom: 0.5rem;
+}
+
+.how-it-works p {
+  font-size: 1rem;
+  color: #5F3E2A;
+  margin-bottom: 2rem;
+}
+
+/* Step Cards */
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.step-card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  max-width: 300px;
+  border-top: 4px solid #EEDDCB;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-5px);
+}
+
+.step-number {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #FFE8C8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  margin: 0 auto 1rem;
+  font-size: 1.25rem;
+  color: #4B2E1F;
+}
+
+.step-card:nth-child(1) {
+  border-top-color: #D89527;
+}
+.step-card:nth-child(2) {
+  border-top-color: #B37724;
+}
+.step-card:nth-child(3) {
+  border-top-color: #6B3E26;
+}
+
+.step-card h3 {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #4B2E1F;
+  margin-bottom: 0.5rem;
+}
+
+.step-card p {
+  color: #5F3E2A;
+  font-size: 0.95rem;
+}
+
+/* Call to Action Box */
+.cta-box {
+  background-color: #FFEFD9;
+  text-align: center;
+  padding: 3rem 1rem;
+  border-radius: 1rem;
+  margin: 1rem auto 2rem;
+  max-width: 900px;
+}
+
+.cta-box h2 {
+  font-size: 1.8rem;
+  color: #4B2E1F;
+  margin-bottom: 1rem;
+}
+
+.cta-box p {
+  color: #5F3E2A;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* CTA Buttons */
+.cta-button {
+  background-color: #D89527;
+  color: #fff;
+  padding: 0.8rem 1.6rem;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.cta-button:hover {
+  background-color: #C87F19;
+}
+
+/* Secondary Button (used for upload image) */
+.cta-button.secondary {
+  background-color: #D89527;
+}
+
+.cta-button.secondary:hover {
+  background-color: #C87F19;
+}
+
+/* Tertiary Button (used for change image) */
+.cta-button.tertiary {
+  background-color: #B37724;
+}
+
+.cta-button.tertiary:hover {
+  background-color: #935E1D;
+}
+
+
+/* Upload Section */
+.upload-box {
+  background-color: #FFF9F4;
+  border: 2px dashed #D89527;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  margin: 2rem auto;
+  max-width: 500px;
+  transition: border-color 0.3s ease;
+}
+
+.upload-box:hover {
+  border-color: #C87F19;
+}
+
+.upload-box p {
+  color: #4B2E1F;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.camera-icon {
+  width: 60px;
+  margin-bottom: 1rem;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+#imagePreviewContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1em;
+}
+
+#imagePreview {
+  max-width: 100%;
+  height: auto;
+  display: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Progress Bar */
+.progress-container {
+  margin: 2rem 0;
+  padding: 0 1rem;
+}
+
+.progress-label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #4B2E1F;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 12px;
+  background-color: #DDE1DD;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: #6B3E26;
+  width: 75%; /* Example default */
+  border-radius: 6px 0 0 6px;
+  transition: width 0.3s ease-in-out;
+}
+
+/* Meal Result Table */
+.meal-results {
+  margin: 2rem auto;
+  max-width: 900px;
+  background-color: #ffffff;
+  border: 1px solid #EEDDCB;
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+.meal-results table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.meal-results th,
+.meal-results td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #F3E6D4;
+  text-align: left;
+  color: #4B2E1F;
+}
+
+.meal-results th {
+  background-color: #FFF3E0;
+  font-weight: 600;
+}
+
+.meal-results td input[type="text"],
+.meal-results td input[type="number"] {
+  width: 100%;
+  padding: 0.4rem;
+  border: 1px solid #EEDDCB;
+  border-radius: 6px;
+  background-color: #FFF9F4;
+  color: #4B2E1F;
+}
+
+.total-protein {
+  font-weight: 700;
+  text-align: right;
+  margin-top: 1rem;
+  color: #6B3E26;
+}
+
+#remainingProtein {
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.protein-bars-container {
+  margin-top: 2rem;
+}
+
+.protein-bar-row {
+  margin-bottom: 0.5rem;
+}
+
+.protein-label {
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+  color: #4B2E1F;
+}
+
+.protein-bar {
+  height: 16px;
+  background-color: #D89527;
+  border-radius: 8px;
+  transition: width 0.3s ease;
+}
+
+/* Form Styling */
+/* Form Inputs and Selects in #userForm */
+#userForm input[type="number"],
+#userForm select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  background-color: #FFF9F4;
+  color: #4B2E1F;
+  border: 1px solid #EEDDCB;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Custom dropdown arrow for select */
+#userForm select {
+  background-image: url("data:image/svg+xml,%3Csvg%20width%3D'10'%20height%3D'6'%20viewBox%3D'0%200%2010%206'%20xmlns%3D'http://www.w3.org/2000/svg'%3E%3Cpath%20d%3D'M0%200l5%206%205-6z'%20fill%3D'%234B2E1F'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 10px;
+  cursor: pointer;
+}
+
+/* Focus effect for inputs and dropdowns */
+#userForm input[type="number"]:focus,
+#userForm select:focus {
+  outline: none;
+  border-color: #D89527;
+  box-shadow: 0 0 0 2px rgba(216, 149, 39, 0.2);
+}
+
+
+/* Tab Button Styles */
+.fitness-level-tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.tab-button {
+  padding: 1rem 2rem;
+  background-color: #D89527;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.tab-button:hover {
+  background-color: #C87F19;
+}

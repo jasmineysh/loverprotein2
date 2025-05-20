@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meal Protein Analyzer</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <img src="images/logo.png" alt="LoveProtein" />
+      </div>
+      <nav class="nav-menu">
+        <a href="index.html">How It Works</a>
+        <a href="#upload">Meal Analysis</a>
+        <a href="#user-info">Your Info</a>
+        <a href="protein.html">Protein Matters</a>  
+      </nav>
+    </div>
+  </header>
+
+  <section class="upload-box" id="upload">
+    <p>Upload a picture of your meal to get started</p>
+    <input type="file" id="mealImage" accept="image/*" />
+    <button class="cta-button secondary" onclick="document.getElementById('mealImage').click()">Choose Image</button>
+    <button class="cta-button tertiary" onclick="analyzeImage()">Analyze Meal</button>
+    <div id="imagePreviewContainer">
+      <img id="imagePreview" src="" alt="Image preview" style="display: none; max-width: 100%; margin-top: 1em;" />
+    </div>
+  </section>
+
+  <section class="meal-results" id="results">
+    <h2>Meal Analysis</h2>
+    <table id="mealTable">
+      <thead>
+        <tr>
+          <th>Food Item</th>
+          <th>Weight (g)</th>
+          <th>Protein (g)</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="mealTableBody">
+        <!-- Dynamically added rows will go here -->
+      </tbody>
+    </table>
+    <button class="cta-button" onclick="addRow()">Add Food Item</button>
+    <p class="total-protein">Total Protein: <span id="totalProtein">0</span> g</p>
+  </section>
+  
+
+  <section class="cta-box" id="user-info">
+    <h2>Your Daily Protein Goal</h2>
+    <form id="userForm">
+      <input type="number" id="age" placeholder="Your age" required />
+      <select id="gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+      <input type="number" id="weight" placeholder="Your weight (kg)" required />
+      <select id="activity">
+        <option value="0.8">Mostly Inactive</option>
+        <option value="1.0">Occasionally Active</option>
+        <option value="1.2">Moderately Active</option>
+        <option value="1.4">Vigorously Active</option>
+        <option value="1.8">Highly Active/Athlete</option>
+      </select>
+      <button class="cta-button" type="submit">Set Goal</button>
+    </form>
+    <p id="proteinGoal">Recommended Daily Protein: 0 g</p>
+    <p id="remainingProtein"></p>
+  
+    <!-- Progress bar inside this section -->
+    <div class="progress-container within-user-box">
+      <div class="progress-label">Protein Intake Progress</div>
+      <div class="progress-bar">
+        <div class="progress-bar-fill" id="proteinProgress" style="width: 0%"></div>
+      </div>
+    </div>
+  </section>
+  
+
+  <script>
+    function analyzeImage() {
+      alert("This is a placeholder. Connect to an API or simulate food detection here.");
+    }
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

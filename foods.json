@@ -1,0 +1,472 @@
+[
+    {
+      "category": "Meat & Poultry",
+      "name": "Beef, Sirloin, cooked",
+      "protein_per_100g": 29
+    },
+    {
+      "category": "Meat & Poultry",
+      "name": "Beef, Tenderloin, cooked",
+      "protein_per_100g": 30
+    },
+    {
+      "category": "Meat & Poultry",
+      "name": "Beef, Ribeye, cooked",
+      "protein_per_100g": 27
+    },
+    {
+      "category": "Meat & Poultry",
+      "name": "Beef, Ground, cooked (90% lean)",
+      "protein_per_100g": 26
+    },
+    {
+      "category": "Meat & Poultry",
+      "name": "Chicken Breast, skinless, cooked",
+      "protein_per_100g": 31
+    },
+    {
+      "category": "Meat & Poultry",
+      "name": "Chicken Thigh, skinless, cooked",
+      "protein_per_100g": 26
+    },
+    {
+      "category": "Meat & Poultry",
+      "name": "Chicken Drumstick, cooked",
+      "protein_per_100g": 27
+    },
+    {
+      "category": "Meat & Poultry",
+      "name": "Chicken Wings, cooked",
+      "protein_per_100g": 25
+    },
+    {
+      "category": "Meat & Poultry",
+      "name": "Pork Loin, cooked",
+      "protein_per_100g": 27
+    },
+    {
+      "category": "Meat & Poultry",
+      "name": "Pork Chop, cooked",
+      "protein_per_100g": 26
+    },
+    {
+      "category": "Meat & Poultry",
+      "name": "Pork Belly, cooked (less lean)",
+      "protein_per_100g": 14
+    },
+    {
+      "category": "Meat & Poultry",
+      "name": "Ground Pork, cooked",
+      "protein_per_100g": 26
+    },
+    {
+      "category": "Meat & Poultry",
+      "name": "Lamb, Leg, roasted",
+      "protein_per_100g": 25
+    },
+    {
+      "category": "Meat & Poultry",
+      "name": "Lamb Chop, cooked",
+      "protein_per_100g": 27
+    },
+    {
+      "category": "Fish & Seafood",
+      "name": "Salmon, cooked",
+      "protein_per_100g": 25
+    },
+    {
+      "category": "Fish & Seafood",
+      "name": "Tuna, canned in water, drained",
+      "protein_per_100g": 29
+    },
+    {
+      "category": "Fish & Seafood",
+      "name": "Cod, cooked",
+      "protein_per_100g": 23
+    },
+    {
+      "category": "Fish & Seafood",
+      "name": "Seabass, cooked",
+      "protein_per_100g": 26
+    },
+    {
+      "category": "Fish & Seafood",
+      "name": "Mackerel, cooked",
+      "protein_per_100g": 26
+    },
+    {
+      "category": "Fish & Seafood",
+      "name": "Prawns, cooked",
+      "protein_per_100g": 25
+    },
+    {
+      "category": "Fish & Seafood",
+      "name": "Squid, cooked",
+      "protein_per_100g": 18
+    },
+    {
+      "category": "Fish & Seafood",
+      "name": "Crab Meat, cooked",
+      "protein_per_100g": 19
+    },
+    {
+      "category": "Fish & Seafood",
+      "name": "Lobster, cooked",
+      "protein_per_100g": 26
+    },
+    {
+      "category": "Fish & Seafood",
+      "name": "Sardines, canned in oil, drained",
+      "protein_per_100g": 25
+    },
+    {
+      "category": "Fish & Seafood",
+      "name": "Anchovies, canned",
+      "protein_per_100g": 29
+    },
+    {
+      "category": "Fish & Seafood",
+      "name": "Tilapia, cooked",
+      "protein_per_100g": 26
+    },
+    {
+      "category": "Dairy & Eggs",
+      "name": "Milk, Full Cream",
+      "protein_per_100g": 3.2
+    },
+    {
+      "category": "Dairy & Eggs",
+      "name": "Milk, Skim",
+      "protein_per_100g": 3.4
+    },
+    {
+      "category": "Dairy & Eggs",
+      "name": "Cheddar Cheese",
+      "protein_per_100g": 25
+    },
+    {
+      "category": "Dairy & Eggs",
+      "name": "Mozzarella Cheese",
+      "protein_per_100g": 28
+    },
+    {
+      "category": "Dairy & Eggs",
+      "name": "Feta Cheese",
+      "protein_per_100g": 14
+    },
+    {
+      "category": "Dairy & Eggs",
+      "name": "Cottage Cheese",
+      "protein_per_100g": 11
+    },
+    {
+      "category": "Dairy & Eggs",
+      "name": "Greek Yogurt, Plain",
+      "protein_per_100g": 10
+    },
+    {
+      "category": "Dairy & Eggs",
+      "name": "Yogurt, Plain",
+      "protein_per_100g": 3.5
+    },
+    {
+      "category": "Dairy & Eggs",
+      "name": "Egg, Whole, cooked",
+      "protein_per_100g": 13
+    },
+    {
+      "category": "Dairy & Eggs",
+      "name": "Egg White, cooked",
+      "protein_per_100g": 11
+    },
+    {
+      "category": "Legumes & Beans",
+      "name": "Lentils, cooked",
+      "protein_per_100g": 9
+    },
+    {
+      "category": "Legumes & Beans",
+      "name": "Chickpeas, cooked",
+      "protein_per_100g": 8.9
+    },
+    {
+      "category": "Legumes & Beans",
+      "name": "Kidney Beans, cooked",
+      "protein_per_100g": 8.7
+    },
+    {
+      "category": "Legumes & Beans",
+      "name": "Black Beans, cooked",
+      "protein_per_100g": 8.9
+    },
+    {
+      "category": "Legumes & Beans",
+      "name": "Soybeans, cooked",
+      "protein_per_100g": 17
+    },
+    {
+      "category": "Legumes & Beans",
+      "name": "Edamame, shelled, cooked",
+      "protein_per_100g": 12
+    },
+    {
+      "category": "Legumes & Beans",
+      "name": "Tofu, Firm",
+      "protein_per_100g": 8
+    },
+    {
+      "category": "Legumes & Beans",
+      "name": "Tempeh",
+      "protein_per_100g": 19
+    },
+    {
+      "category": "Nuts & Seeds",
+      "name": "Almonds",
+      "protein_per_100g": 21
+    },
+    {
+      "category": "Nuts & Seeds",
+      "name": "Walnuts",
+      "protein_per_100g": 15
+    },
+    {
+      "category": "Nuts & Seeds",
+      "name": "Peanuts",
+      "protein_per_100g": 25
+    },
+    {
+      "category": "Nuts & Seeds",
+      "name": "Cashews",
+      "protein_per_100g": 18
+    },
+    {
+      "category": "Nuts & Seeds",
+      "name": "Pumpkin Seeds (Pepitas)",
+      "protein_per_100g": 19
+    },
+    {
+      "category": "Nuts & Seeds",
+      "name": "Chia Seeds",
+      "protein_per_100g": 17
+    },
+    {
+      "category": "Nuts & Seeds",
+      "name": "Flax Seeds, ground",
+      "protein_per_100g": 18
+    },
+    {
+      "category": "Grains",
+      "name": "Quinoa, cooked",
+      "protein_per_100g": 4.4
+    },
+    {
+      "category": "Grains",
+      "name": "Oats, rolled, cooked",
+      "protein_per_100g": 3
+    },
+    {
+      "category": "Grains",
+      "name": "Rice, White, cooked",
+      "protein_per_100g": 2.4
+    },
+    {
+      "category": "Grains",
+      "name": "Rice, Brown, cooked",
+      "protein_per_100g": 2.6
+    },
+    {
+      "category": "Grains",
+      "name": "Bread, White",
+      "protein_per_100g": 7.5
+    },
+    {
+      "category": "Grains",
+      "name": "Bread, Whole Grain",
+      "protein_per_100g": 9.5
+    },
+    {
+      "category": "Grains",
+      "name": "Sourdough Bread",
+      "protein_per_100g": 9
+    },
+    {
+      "category": "Vegetables",
+      "name": "Broccoli, cooked",
+      "protein_per_100g": 2.8
+    },
+    {
+      "category": "Vegetables",
+      "name": "Spinach, cooked",
+      "protein_per_100g": 2.9
+    },
+    {
+      "category": "Vegetables",
+      "name": "Peas, Green, cooked",
+      "protein_per_100g": 5
+    },
+    {
+      "category": "Vegetables",
+      "name": "Cucumber, sliced",
+      "protein_per_100g": 0.7
+    },
+    {
+      "category": "Vegetables",
+      "name": "Carrots, sliced, cooked",
+      "protein_per_100g": 0.9
+    },
+    {
+      "category": "Vegetables",
+      "name": "Potatoes, boiled",
+      "protein_per_100g": 2
+    },
+    {
+      "category": "Vegetables",
+      "name": "Sweet Potato, cooked",
+      "protein_per_100g": 1.6
+    },
+    {
+      "category": "Vegetables",
+      "name": "Pumpkin, cooked",
+      "protein_per_100g": 1
+    },
+    {
+      "category": "Vegetables",
+      "name": "Kai-lan (Chinese Kale), cooked",
+      "protein_per_100g": 1.5
+    },
+    {
+      "category": "Vegetables",
+      "name": "Choy Sum, cooked",
+      "protein_per_100g": 1.6
+    },
+    {
+      "category": "Vegetables",
+      "name": "Bok Choy, cooked",
+      "protein_per_100g": 1.5
+    },
+    {
+      "category": "Vegetables",
+      "name": "Long Beans (Snake Beans), cooked",
+      "protein_per_100g": 2.4
+    },
+    {
+      "category": "Vegetables",
+      "name": "Okra, cooked",
+      "protein_per_100g": 1.9
+    },
+    {
+      "category": "Vegetables",
+      "name": "Eggplant, cooked",
+      "protein_per_100g": 1
+    },
+    {
+      "category": "Vegetables",
+      "name": "Capsicum (Bell Pepper), cooked",
+      "protein_per_100g": 1
+    },
+    {
+      "category": "Vegetables",
+      "name": "Tomato, raw",
+      "protein_per_100g": 0.9
+    },
+    {
+      "category": "Vegetables",
+      "name": "Corn, cooked",
+      "protein_per_100g": 3.3
+    },
+    {
+      "category": "Vegetables",
+      "name": "Mushrooms, cooked",
+      "protein_per_100g": 3.1
+    },
+    {
+      "category": "Vegetables",
+      "name": "Asparagus, cooked",
+      "protein_per_100g": 2.2
+    },
+    {
+      "category": "Vegetables",
+      "name": "Cauliflower, cooked",
+      "protein_per_100g": 1.9
+    },
+    {
+      "category": "Vegetables",
+      "name": "Cabbage, cooked",
+      "protein_per_100g": 1.8
+    },
+    {
+      "category": "Vegetables",
+      "name": "Lettuce, Romaine",
+      "protein_per_100g": 1.2
+    },
+    {
+      "category": "Meat Alternatives",
+      "name": "Plant-Based Burger Patty (Soy-based)",
+      "protein_per_100g": 18
+    },
+    {
+      "category": "Meat Alternatives",
+      "name": "Plant-Based Sausage (Soy-based)",
+      "protein_per_100g": 15
+    },
+    {
+      "category": "Meat Alternatives",
+      "name": "Mycoprotein (Quorn)",
+      "protein_per_100g": 13
+    },
+    {
+      "category": "Grains",
+      "name": "Pasta, Whole Wheat, cooked",
+      "protein_per_100g": 7.2
+    },
+    {
+      "category": "Grains",
+      "name": "Pasta, Refined Wheat, cooked",
+      "protein_per_100g": 5.8
+    },
+    {
+      "category": "Grains",
+      "name": "Roti (Indian Flatbread)",
+      "protein_per_100g": 10
+    },
+    {
+      "category": "Grains",
+      "name": "Naan Bread",
+      "protein_per_100g": 9
+    },
+    {
+      "category": "Grains",
+      "name": "Couscous, cooked",
+      "protein_per_100g": 3.8
+    },
+    {
+      "category": "Grains",
+      "name": "Barley, cooked",
+      "protein_per_100g": 3.6
+    },
+    {
+      "category": "Nuts & Seeds",
+      "name": "Sunflower Seeds",
+      "protein_per_100g": 21
+    },
+    {
+      "category": "Nuts & Seeds",
+      "name": "Pistachios",
+      "protein_per_100g": 20
+    },
+    {
+      "category": "Nuts & Seeds",
+      "name": "Hazelnuts",
+      "protein_per_100g": 14
+    },
+    {
+      "category": "Nuts & Seeds",
+      "name": "Brazil Nuts",
+      "protein_per_100g": 14
+    },
+    {
+      "category": "Legumes & Beans",
+      "name": "Green Beans, cooked",
+      "protein_per_100g": 2
+    }
+]
