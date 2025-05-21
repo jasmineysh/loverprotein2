@@ -6,6 +6,13 @@
   <title>LoveProtein - Home</title>
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <!-- Google tag (gtag.js) --> 
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-SW204HG4RB"></script> 
+ <script> window.dataLayer = window.dataLayer || []; 
+ function gtag(){dataLayer.push(arguments);} 
+ gtag('js', new Date()); 
+ gtag('config', 'G-SW204HG4RB'); 
+ </script>
 </head>
 <body>
   <header class="site-header">
@@ -16,10 +23,9 @@
         </a>
       </div>
       <nav class="nav-menu">
+        <a href="protein.html">Protein Matters</a>  
         <a href="index.html">How It Works</a>
         <a href="analyse.html">Meal Analysis</a>
-        <a href="#user-info">Your Info</a>
-        <a href="protein.html">Protein Matters</a>  
       </nav>
     </div>
   </header>
@@ -47,10 +53,133 @@
       </div>
     </section>
 
+<!-- NOTE: PERHAPS CAN DELETE
     <section class="cta-box">
       <h2>Protein's Role in Muscle Recovery</h2>
-      <p>Start analyzing your meals and tracking your progress toward your protein goals.</p>
-    </section>
+      <h3> Repair & Rebuild</h3>
+      <p>Exercise creates microtears in muscle fibers. Protein provides the amino acids necessary to repair these tears, making muscles stronger and more resilient than before.
+      </p>  
+      <h3>Reduce Inflammation</h3>
+      <p>Certain amino acids in protein help reduce exercise-induced inflammation, minimizing soreness and accelerating the recovery process.
+      </p>
+      <h3>Replenish Glycogen</h3>
+      <p>When consumed alongside carbohydrates post-workout, protein enhances glycogen restoration, preparing your muscles for your next training session.
+      </p>
+    </section> -->
+
+    <!-- tabbed section is here -->
+    <!-- <section class="protein-tabs-section" style="max-width: 900px; margin: 2rem auto; background-color: #FFF9F4; border-radius: 1rem; padding: 1.5rem 1rem;"> -->
+        <section class="protein-tabs-section" style="
+        max-width: 900px;
+        margin: 2rem auto;
+        background-color: #FFEFD9; /* from .cta-box */
+        border-radius: 1rem;
+        padding: 1.5rem 1rem; /* same padding as .cta-box */
+        text-align: left; /* override unwanted center alignment */
+      ">    
+        <h2 style="text-align: center; color: #4B2E1F; margin-bottom: 2rem;font-size: 1.8rem;">Protein Needs by Activity Level</h2>
+        <div class="fitness-level-tabs">
+          <button class="profile-tab active" data-tab="sedentary">Sedentary</button>
+          <button class="profile-tab" data-tab="lightly-active">Slightly Active</button>
+          <button class="profile-tab" data-tab="moderately-active">Moderately Active</button>
+          <button class="profile-tab" data-tab="very-active">Very Active</button>
+          <button class="profile-tab" data-tab="athlete">Athlete</button>
+        </div>
+      
+        <div class="tab-content">
+      
+          <!-- Sedentary -->
+          <div class="tab-panel" id="sedentary" style="display: none;">
+            <p><span style="color:#85602e;">Sedentary: Little or no exercise</p>
+            <p><span style="color:#B37724;">🎯 Recommended Intake:</span> 0.8 g of protein per kg of body weight per day</p>
+            <p><span style="color:#B37724;">🥩 Sources:</span> Eggs, Greek yogurt, tofu, lentils, chicken breast (smaller portions)</p>
+            <p><span style="color:#B37724;">⏱️ Timing:</span> Evenly distributed across meals to support muscle maintenance</p>
+            <p><span style="color:#B37724;">✅ Considerations:</span> Focus on quality over quantity; avoid excessive intake due to lower energy expenditure</p>
+          </div>
+      
+          <!-- Lightly Active -->
+          <div class="tab-panel" id="lightly-active" style="display: none;">
+            <p><span style="color:#85602e;">Slightly Active: Exercise 1–2 days/week</p>
+            <p><span style="color:#B37724;">🎯 Recommended Intake:</span> 1.0–1.2 g/kg/day</p>
+            <p><span style="color:#B37724;">🥩 Sources:</span> Fish, dairy, beans, lean meats, tempeh</p>
+            <p><span style="color:#B37724;">⏱️ Timing:</span> Include protein in breakfast and post-light workout snacks</p>
+            <p><span style="color:#B37724;">✅ Considerations:</span> Prioritize balanced meals with lean protein to support muscle upkeep and prevent snacking.</p>
+          </div>
+      
+          <!-- Moderately Active -->
+          <div class="tab-panel" id="moderately-active" style="display: none;">
+            <p><span style="color:#85602e;">Moderately Active: Exercise 3-5 days/week</p>
+            <p><span style="color:#B37724;">🎯 Recommended Intake:</span> 1.2–1.6 g/kg/day</p>
+            <p><span style="color:#B37724;">🥩 Sources:</span> Chicken, tuna, cottage cheese, quinoa, legumes</p>
+            <p><span style="color:#B37724;">⏱️ Timing:</span> 20–30g within 30 minutes post-workout recommended</p>
+            <p><span style="color:#B37724;">✅ Considerations:</span> Space protein intake across meals and snacks to support muscle repair and daily energy demands.</p>
+          </div>
+      
+          <!-- Very Active -->
+          <div class="tab-panel" id="very-active" style="display: none;">
+            <p><span style="color:#85602e;">Very Active: Exercise 6-7 days/week</p>
+            <p><span style="color:#B37724;">🎯 Recommended Intake:</span> 1.6–2.0 g/kg/day</p>
+            <p><span style="color:#B37724;">🥩 Sources:</span> Lean beef, turkey, protein shakes, lentil pasta, eggs</p>
+            <p><span style="color:#B37724;">⏱️ Timing:</span> Post-exercise within 45 minutes; include casein before bed for overnight synthesis</p>
+            <p><span style="color:#B37724;">✅ Considerations:</span>  Increase intake around training windows to maximize recovery, performance, and muscle adaptation.</p>
+          </div>
+      
+          <!-- Athlete -->
+          <div class="tab-panel" id="athlete" style="display: none;">
+            <p><span style="color:#85602e;">Athlete: Exercise twice daily or intense training</p>
+            <p><span style="color:#B37724;">🎯 Recommended Intake:</span> 1.8–2.2 g/kg/day</p>
+            <p><span style="color:#B37724;">🥩 Sources:</span> Whey protein, salmon, lean meats, eggs, legumes</p>
+            <p><span style="color:#B37724;">⏱️ Timing:</span> Strategic timing before/after workouts; spread intake across 4–6 meals</p>
+            <p><span style="color:#B37724;">✅ Considerations:</span> Focus on muscle repair, immune support, and adaptation to high training load</p>
+          </div>
+      
+        </div>
+      
+        <details style="margin-top: 2rem; font-size: 0.85rem; font-style: italic; color: #5F3E2A;">
+          <summary>References</summary>
+          <ul style="padding-left: 1.2rem; margin-top: 0.5rem;">
+            <li>World Health Organization. (2007). Protein and Amino Acid Requirements in Human Nutrition.</li>
+            <li>American College of Sports Medicine. (2016). Nutrition and Athletic Performance.</li>
+            <li>Academy of Nutrition and Dietetics. (2016). Position on Nutrition for Athletic Performance.</li>
+            <li>Jäger et al. (2017). International Society of Sports Nutrition position stand: protein and exercise. <em>Journal of the International Society of Sports Nutrition</em>.</li>
+          </ul>
+        </details>
+      </section>
+    
+      
+      <!-- SCRIPT for tabbed section is here -->
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const tabButtons = document.querySelectorAll(".profile-tab");
+          const tabPanels = document.querySelectorAll(".tab-panel");
+      
+          function showPanel(tabId) {
+            // Show/hide the relevant content panels
+            tabPanels.forEach(panel => {
+              panel.style.display = panel.id === tabId ? "block" : "none";
+            });
+      
+            // Toggle the active class on the tabs
+            tabButtons.forEach(button => {
+              button.classList.toggle("active", button.dataset.tab === tabId);
+            });
+          }
+      
+          // Show the first tab and panel by default
+          if (tabButtons.length > 0) {
+            showPanel(tabButtons[0].dataset.tab);
+          }
+      
+          // Add click event listeners
+          tabButtons.forEach(button => {
+            button.addEventListener("click", () => {
+              showPanel(button.dataset.tab);
+            });
+          });
+        });
+      </script>
+      
+      
   </main>
 </body>
 </html>

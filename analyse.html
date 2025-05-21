@@ -6,6 +6,13 @@
   <title>Meal Protein Analyzer</title>
   <link rel="stylesheet" href="styles.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- Google tag (gtag.js) --> 
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-SW204HG4RB"></script> 
+ <script> window.dataLayer = window.dataLayer || []; 
+ function gtag(){dataLayer.push(arguments);} 
+ gtag('js', new Date()); 
+ gtag('config', 'G-SW204HG4RB'); 
+ </script>
 </head>
 <body>
   <header class="site-header">
@@ -14,10 +21,9 @@
         <img src="images/logo.png" alt="LoveProtein" />
       </div>
       <nav class="nav-menu">
-        <a href="index.html">How It Works</a>
-        <a href="#upload">Meal Analysis</a>
-        <a href="#user-info">Your Info</a>
         <a href="protein.html">Protein Matters</a>  
+        <a href="index.html">How It Works</a>
+        <a href="analyse.html">Meal Analysis</a>
       </nav>
     </div>
   </header>
@@ -49,6 +55,19 @@
     </table>
     <button class="cta-button" onclick="addRow()">Add Food Item</button>
     <p class="total-protein">Total Protein: <span id="totalProtein">0</span> g</p>
+
+    <details style="margin-top: 2rem; font-size: 0.85rem; font-style: italic; color: #5F3E2A;">
+      <summary>All values reflect cooked weight, unless clearly noted (e.g., raw tomato), to match real-world usage. Protein values were sourced and generalized from authoritative and standardized nutrition references, mainly:</summary>
+      <ul style="padding-left: 1.2rem; margin-top: 0.5rem;">
+        <li>USDA FoodData Central</li>
+        <li>NHS / UK Food Standards Agency</li>
+        <li>Harvard and Mayo Clinic nutrition guides</li>
+        <li>Peer-reviewed nutrition datasets (e.g., nutritionvalue.org and nutritionix APIs used as references when USDA data is missing or region-specific)</li>
+        <li>All values reflect cooked weight, unless clearly noted (e.g., raw tomato), to match real-world usage.</li>
+      </ul>
+    </details>
+    
+
   </section>
   
 
@@ -62,14 +81,15 @@
       </select>
       <input type="number" id="weight" placeholder="Your weight (kg)" required />
       <select id="activity">
-        <option value="0.8">Mostly Inactive</option>
-        <option value="1.0">Occasionally Active</option>
-        <option value="1.2">Moderately Active</option>
-        <option value="1.4">Vigorously Active</option>
-        <option value="1.8">Highly Active/Athlete</option>
+        <option value="0.8">Sedentary — Little to no exercise</option>
+        <option value="1.0">Slightly Active — Light exercise 1–2 days/week</option>
+        <option value="1.2">Moderately Active — Moderate exercise 3–5 days/week</option>
+        <option value="1.4">Very Active — Hard exercise 6–7 days/week</option>
+        <option value="1.8">Athlete — Intense exercise daily or 2x/day training</option>
       </select>
-      <button class="cta-button" type="submit">Set Goal</button>
+      
     </form>
+    <button class="cta-button" id="goalButton" onclick="setGoal()">Set Goal</button>
     <p id="proteinGoal">Recommended Daily Protein: 0 g</p>
     <p id="remainingProtein"></p>
   
@@ -83,11 +103,10 @@
   </section>
   
 
-  <script>
-    function analyzeImage() {
-      alert("This is a placeholder. Connect to an API or simulate food detection here.");
-    }
-  </script>
+
   <script src="script.js"></script>
+
+
+
 </body>
 </html>

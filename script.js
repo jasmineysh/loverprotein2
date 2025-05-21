@@ -1,6 +1,8 @@
-let foodData = []; // Store the food items from your JSON file
+let foodData = [];
+let storedProteinGoal = 0;
+let predictImage = "";
 
-// --- Load food data from JSON file ---
+// Load food data
 fetch('foods.json')
   .then(response => response.json())
   .then(data => {
@@ -10,122 +12,142 @@ fetch('foods.json')
     console.error('Error loading food data:', error);
   });
 
-// Initialize the Clarifai API client with your API key
-/*const clarifaiApp = new Clarifai.App({
-  apiKey: '7245ee8d40ab441ebd102cbd3ca9eb7e'  // Replace with your Clarifai API key
-});*/
-var predictImage = "";
+// Image upload preview
 const fileInput = document.getElementById("mealImage");
-
-  fileInput.addEventListener("change", function () {
-      const file = fileInput.files[0];
-
-      if (file && file.type.startsWith("image/")) {
-          const reader = new FileReader();
-
-          reader.onload = function (e) {
-              const base64Image = e.target.result;
-              console.log("Image base64 data:", base64Image);
-
-              // Optional: Display the image preview
-              const imgPreview = document.getElementById("imagePreview");
-              imgPreview.src = base64Image;
-              imgPreview.style.display = "block";
-              predictImage = base64Image;
-          };
-          
-           
-          reader.readAsDataURL(file);
-      } else {
-          alert("Please select a valid image file.");
-      }
-  });
-// --- Analyze Image with Clarifai ---
-function analyzeImage() {
-  
-
-  const PAT = '7245ee8d40ab441ebd102cbd3ca9eb7e';
-// Specify the correct user_id/app_id pairings
-// Since you're making inferences outside your app's scope
-const USER_ID = 'clarifai';       
-const APP_ID = 'main';
-// Change these to whatever model and image URL you want to use
-const MODEL_ID = 'food-item-recognition';
-const MODEL_VERSION_ID = '1d5fd481e0cf4826aa72ec3ff049e044';    
-const IMAGE_BYTES_STRING = predictImage;
-
-const raw = JSON.stringify({
-  "user_app_id": {
-      "user_id": USER_ID,
-      "app_id": APP_ID
-  },
-  "inputs": [
-      {
-          "data": {
-              "image": {
-                  "base64": IMAGE_BYTES_STRING
-              }
-          }
-      }
-  ]
+fileInput.addEventListener("change", function () {
+  const file = fileInput.files[0];
+  if (file && file.type.startsWith("image/")) {
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      predictImage = e.target.result;
+      const imgPreview = document.getElementById("imagePreview");
+      imgPreview.src = predictImage;
+      imgPreview.style.display = "block";
+    };
+    reader.readAsDataURL(file);
+  } else {
+    alert("Please select a valid image file.");
+  }
 });
 
-const requestOptions = {
-  method: 'POST',
-  headers: {
-      'Accept': 'application/json',
-      'Authorization': 'Key ' + PAT
-  },
-  body: raw
-};
+// Simulate image analysis
+function analyzeImage() {
+  if (!predictImage) {
+    alert("Please upload an image first.");
+    return;
+  }
 
-// NOTE: MODEL_VERSION_ID is optional, you can also call prediction with the MODEL_ID only
-// https://api.clarifai.com/v2/models/{YOUR_MODEL_ID}/outputs
-// this will default to the latest version_id
+  const mockDetectedFoods = [
+    { name: "Chicken Breast, skinless, cooked", weight: 150 },
+    { name: "Broccoli, cooked", weight: 40 },
+    { name: "Rice, White, cooked", weight: 50 }
+  ];
 
-fetch("https://api.clarifai.com/v2/models/" + MODEL_ID + "/versions/" + MODEL_VERSION_ID + "/outputs", requestOptions)
-  .then(response => response.text())
-  .then(result => console.log(result))
-  .catch(error => console.log('error', error));
-
+  renderDetectedFoodRows(mockDetectedFoods);
 }
 
-// Function to calculate protein values based on detected food items
-function calculateProteinForDetectedFoods(detectedFoods) {
-  let totalProtein = 0;
+// Render detected food rows
+function renderDetectedFoodRows(detectedFoods) {
   const mealTableBody = document.getElementById('mealTableBody');
-  mealTableBody.innerHTML = '';  // Clear previous rows
+  mealTableBody.innerHTML = ''; // Clear old rows
 
-  detectedFoods.forEach(foodName => {
-    // Search for the food in your JSON data
+  detectedFoods.forEach(foodItem => {
+    addRow(foodItem.name, foodItem.weight);
+  });
+
+  updateProteinValues();
+}
+
+// Add a row (used by detection or manual)
+function addRow(selectedFood = "", weightValue = "") {
+  if (foodData.length === 0) {
+    alert("Food data is still loading. Please wait.");
+    return;
+  }
+
+  const mealTableBody = document.getElementById('mealTableBody');
+  const row = document.createElement('tr');
+
+  const foodOptions = foodData
+    .map(food => `<option value="${food.name}" ${food.name === selectedFood ? 'selected' : ''}>${food.name}</option>`)
+    .join('');
+
+  row.innerHTML = `
+    <td>
+      <select class="food-select">
+        <option value="">Select food</option>
+        ${foodOptions}
+      </select>
+    </td>
+    <td>
+      <input type="number" class="weight-input" placeholder="grams" min="0" value="${weightValue}" />
+    </td>
+    <td class="protein-cell">0g</td>
+    <td><button class="cta-button remove-btn" onclick="removeRow(this)">Remove</button></td>
+  `;
+
+  mealTableBody.appendChild(row);
+
+  row.querySelector('.food-select').addEventListener('change', updateProteinValues);
+  row.querySelector('.weight-input').addEventListener('input', updateProteinValues);
+}
+
+// Remove a row
+function removeRow(button) {
+  const row = button.closest('tr');
+  row.remove();
+  updateProteinValues();
+}
+
+// Recalculate protein values and update display
+function updateProteinValues() {
+  let totalProtein = 0;
+  const rows = document.querySelectorAll('#mealTableBody tr');
+
+  rows.forEach(row => {
+    const foodName = row.querySelector('.food-select')?.value;
+    const weight = parseFloat(row.querySelector('.weight-input')?.value);
+    const proteinCell = row.querySelector('.protein-cell');
+
+    if (!foodName || isNaN(weight)) {
+      proteinCell.textContent = "0g";
+      return;
+    }
+
     const food = foodData.find(item => item.name.toLowerCase() === foodName.toLowerCase());
-
     if (food) {
-      // Calculate protein (assuming 100g serving size by default)
-      const protein = (food.protein_per_100g * 100) / 100; // You can adjust the weight as needed
-
+      const protein = (food.protein_per_100g * weight) / 100;
+      proteinCell.textContent = `${protein.toFixed(2)}g`;
       totalProtein += protein;
-
-      // Add a row to the meal table with the food info
-      const row = document.createElement('tr');
-      row.innerHTML = `
-        <td>${food.name}</td>
-        <td>100g</td>
-        <td>${protein.toFixed(2)}g</td>
-        <td><button class="cta-button remove-btn" onclick="removeRow(this)">Remove</button></td>
-      `;
-      mealTableBody.appendChild(row);
+    } else {
+      proteinCell.textContent = "0g";
     }
   });
 
-  // Update total protein value
   document.getElementById('totalProtein').textContent = totalProtein.toFixed(2);
   updateProgressBar(totalProtein);
   updateRemainingProteinMessage(totalProtein);
-  renderProteinChart();  // If you want to render a chart based on the detected foods
 }
 
-// --- Progress Bar Update ---
+// Set goal
+function setGoal() {
+  const age = parseInt(document.getElementById('age').value);
+  const gender = document.getElementById('gender').value;
+  const weight = parseFloat(document.getElementById('weight').value);
+  const activityFactor = parseFloat(document.getElementById('activity').value);
+
+  if (isNaN(age) || isNaN(weight) || isNaN(activityFactor)) {
+    alert("Please fill in all required fields.");
+    return;
+  }
+
+  storedProteinGoal = weight * activityFactor;
+  document.getElementById('proteinGoal').textContent = `Recommended Daily Protein: ${storedProteinGoal.toFixed(2)} g`;
+
+  updateProteinValues();
+}
+
+// Update progress bar
 function updateProgressBar(totalProtein) {
   if (storedProteinGoal && !isNaN(storedProteinGoal)) {
     const progress = Math.min((totalProtein / storedProteinGoal) * 100, 100);
@@ -133,7 +155,7 @@ function updateProgressBar(totalProtein) {
   }
 }
 
-// --- Update Remaining Protein Message ---
+// Update message
 function updateRemainingProteinMessage(totalProtein) {
   const container = document.getElementById('results');
   let remainingEl = document.getElementById('remainingProtein');
@@ -141,8 +163,6 @@ function updateRemainingProteinMessage(totalProtein) {
   if (!remainingEl) {
     remainingEl = document.createElement('p');
     remainingEl.id = 'remainingProtein';
-    remainingEl.style.fontWeight = 'bold';
-    remainingEl.style.marginTop = '1em';
     container.appendChild(remainingEl);
   }
 
@@ -150,21 +170,18 @@ function updateRemainingProteinMessage(totalProtein) {
     const remaining = storedProteinGoal - totalProtein;
 
     if (remaining > 0) {
-      remainingEl.textContent = `💪Nice! You need ${remaining.toFixed(2)}g more protein today. Let's get going!`;
-      remainingEl.style.color = '#a8632d'; // brown-ish
+      remainingEl.textContent = `💪 Need ${remaining.toFixed(2)}g more protein today — you’ve got this!`;
+      remainingEl.style.color = '#85602e';
     } else {
       remainingEl.textContent = `🎉 Great job! You've met your protein goal!`;
-      remainingEl.style.color = '#2E8B57'; // green
+      remainingEl.style.color = '#2E8B57';
     }
   } else {
+  
     remainingEl.textContent = '';
   }
 }
 
-// Remove row from table
-function removeRow(button) {
-  const row = button.closest('tr');
-  row.remove();
-  updateProteinValues();  // Recalculate protein after row is removed
-}
+
+
 

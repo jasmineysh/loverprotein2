@@ -145,7 +145,7 @@ body {
 .cta-box {
   background-color: #FFEFD9;
   text-align: center;
-  padding: 3rem 1rem;
+  padding: 1.5rem 1rem;
   border-radius: 1rem;
   margin: 1rem auto 2rem;
   max-width: 900px;
@@ -409,4 +409,56 @@ input[type="file"] {
 
 .tab-button:hover {
   background-color: #C87F19;
+}
+
+
+
+/* ===== FOR TABBED SECTION ===== */
+.profile-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 2rem;
+  background-color: #F0ECE6;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* ===== ALL TABS ===== */
+.profile-tab {
+  flex: 1 1 160px;
+  min-width: 160px;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  background-color: transparent;
+  color: #4B2E1F;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.3s ease;
+}
+
+/* ===== INACTIVE TABS: Dim them by default */
+.profile-tab:not(.active) {
+  background-color: #FFE8C8; /* matches step-circle background */
+  color: #6B3E26;
+}
+
+/* ===== HOVER EFFECT on INACTIVE tabs ===== */
+.profile-tab:not(.active):hover {
+  transform: scale(1.04);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== ACTIVE TAB ===== */
+.profile-tab.active {
+  background-color: #D89527;
+  color: #fff;
+  filter: none;
+  z-index: 1;
 }
